@@ -24,6 +24,7 @@
       <div class="title m-b-md">
         Laravel
       </div>
+      <h2>{{ $text ?? '' }}</h2>
     </div>
   </div>
 @endsection

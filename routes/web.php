@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Web\IndexController@index');
+Route::get('/test/{date}', 'Web\IndexController@test');
 
-Route::get('/test/{date}', function (\Carbon\Carbon $date) {
-    return view('welcome', ['date' => $date]);
-});
+Route::get('res/dummy', 'Web\ResController@dummy')->name('res.dummy');
+Route::resource('res', 'Web\ResController@index');
 
-Route::get('/json', function () {
-    return response()->json(['message' => 'hello!']);
-});
+Route::resource('res.subres', 'Web\SubresController@index');
