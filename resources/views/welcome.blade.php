@@ -1,7 +1,7 @@
 @extends('app')
 
 @push('footer')
-  <h3>ZZZZZZZZZZZZZzzzxzzz</h3>
+  ZZZZZZZZZZZZZzzzxzzz
 @endpush
 
 @section('content')
@@ -21,10 +21,18 @@
     @endif
 
     <div class="content">
-      <div class="title m-b-md">
-        Laravel
+      <h1 class="h1 mb-4">
+        Laravel Demo
+      </h1>
+
+      <div class="row">
+        @foreach($users as $user)
+          <div class="col-4 mb-4">
+            @include('partials.user')
+          </div>
+        @endforeach
       </div>
-      <h2>{{ $text ?? '' }}</h2>
+
     </div>
   </div>
 @endsection

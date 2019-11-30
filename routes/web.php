@@ -12,9 +12,4 @@
 */
 
 Route::get('/', 'Web\IndexController@index');
-Route::get('/test/{date}', 'Web\IndexController@test');
-
-Route::get('res/dummy', 'Web\ResController@dummy')->name('res.dummy');
-Route::resource('res', 'Web\ResController@index');
-
-Route::resource('res.subres', 'Web\SubresController@index');
+Route::get('/user/{user_id}', 'Web\IndexController@user')->name('user.name');
