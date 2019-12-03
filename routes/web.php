@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'Web\IndexController@index');
-Route::get('/user/{user_id}', 'Web\IndexController@user')->name('user.name');
+Route::get('/post/{post_id}', 'Web\IndexController@post')->name('post.show');
+Route::get('/user/{user_id}', 'Web\IndexController@user')->name('user.show');

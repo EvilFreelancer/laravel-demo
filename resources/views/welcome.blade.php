@@ -1,9 +1,5 @@
 @extends('app')
 
-@push('footer')
-  ZZZZZZZZZZZZZzzzxzzz
-@endpush
-
 @section('content')
   <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
@@ -25,14 +21,16 @@
         Laravel Demo
       </h1>
 
-      <div class="row">
-        @foreach($users as $user)
-          <div class="col-4 mb-4">
-            @include('partials.user')
-          </div>
+      <div class="list-group">
+        @foreach($posts as $post)
+          @include('partials.post')
         @endforeach
       </div>
 
     </div>
   </div>
 @endsection
+
+@push('footer')
+  welcome
+@endpush

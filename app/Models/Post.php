@@ -4,11 +4,12 @@ namespace App\Models;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Message extends Model
+class Post extends Model
 {
-    protected $table = 'messages';
+    protected $table = 'posts';
 
     protected $dates = [
         'created_at',
@@ -29,10 +30,10 @@ class Message extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function post(): HasOne
+    public function messages(): HasMany
     {
-        return $this->hasOne(Post::class, 'id', 'post_id');
+        return $this->hasMany(Message::class, 'post_id', 'id');
     }
 }
