@@ -3,8 +3,7 @@
 @section('content')
   <div>
     <h2>{{ $post->title }}</h2>
-
-    <p>{{ $post->description }}</p>
+    <p class="mb-5">{{ $post->description }}</p>
 
     <h3>Messages</h3>
     <div class="list-group">
@@ -14,7 +13,7 @@
           <a href="{{ route('user.show', ['user_id' => $message->user->id]) }}">
             {{ $message->user->name }}
           </a>
-          <span class="float-right">{{ $message->created_at->format('Y-m-d H:i:s') }}</span>
+          <span class="float-right text-muted">{{ $message->created_at->format('Y-m-d H:i:s') }}</span>
         </div>
       @endforeach
     </div>

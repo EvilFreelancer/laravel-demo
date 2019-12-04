@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Company;
 use App\Models\Post;
 use App\User;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -34,6 +35,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::model('post_id', Post::class);
         Route::model('user_id', User::class);
+        Route::model('company_id', Company::class);
     }
 
     /**

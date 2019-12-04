@@ -14,3 +14,4 @@
 Route::get('/', 'Web\IndexController@index');
 Route::get('/post/{post_id}', 'Web\IndexController@post')->name('post.show');
 Route::get('/user/{user_id}', 'Web\IndexController@user')->name('user.show');
+Route::get('/company/{company_id}', 'Web\IndexController@company')->name('company.show');
